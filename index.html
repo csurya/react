@@ -1,9 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>So-and-so's React Assignment</title>
+    <title>Chrisanthy's React Assignment</title>
+
+    <style>
+    h1, li{
+      text-align:center;
+    }
+    </style>
+
+    <h1> 6 Steps to Sketching the Chrysler Building </h1>
+    <p>
+      <li>New lines in the next step are highlighted in <span style="color:blue">blue</span><br></li>
+      <li>Erase the dashed lines</li>
+    </p>
   </head>
+
   <body>
-    YOUR PROJECT HERE
+    <p>
+    <img id='image' src="http://www.alilsegue.com/wp-content/uploads/2014/10/0bft.jpg"
+    alt="sketch1" style="display:block; margin:0 auto;" width= "250" height = "500">
+    </p>
+
+    <button onclick="prevStep()" style ="display:block; margin:0 auto;">Previous Step</button>
+    <button onclick="nextStep()" style ="display:block; margin:0 auto;">Next Step</button>
+
+
+    <script>
+    //count number of button clicks
+    countS = 0;
+
+    //put images into arrays
+    var imagesArr = new Array();
+
+    imagesArr [0] = new Image();
+    imagesArr[0].src = 'http://www.alilsegue.com/wp-content/uploads/2014/10/0bft.jpg';
+
+    imagesArr [1] = new Image();
+    imagesArr[1].src = 'http://www.alilsegue.com/wp-content/uploads/2014/10/1bft.jpg';
+
+    imagesArr [2] = new Image();
+    imagesArr[2].src = 'http://www.alilsegue.com/wp-content/uploads/2014/10/2bft.jpg';
+
+    imagesArr [3] = new Image();
+    imagesArr[3].src = 'http://www.alilsegue.com/wp-content/uploads/2014/10/3bft.jpg';
+
+    imagesArr [4] = new Image();
+    imagesArr[4].src = 'http://www.alilsegue.com/wp-content/uploads/2014/10/4bft.jpg';
+
+    imagesArr [5] = new Image();
+    imagesArr[5].src = 'http://www.alilsegue.com/wp-content/uploads/2014/10/5bft.jpg';
+
+    imagesArr [6] = new Image();
+    imagesArr[6].src = 'http://www.alilsegue.com/wp-content/uploads/2014/10/6bft.jpg';
+
+
+    function nextStep(){
+      if(countS<imagesArr.length-1){
+        countS++;
+      }else{
+        countS = 0;
+      }
+      document.getElementById("image").src = imagesArr[countS].src;
+    }
+
+    function prevStep(){
+      if(countS>0){
+        countS--;
+      }else{
+        countS = 0;
+      }
+      document.getElementById("image").src = imagesArr[countS].src;
+    }
+    </script>
   </body>
 </html>
